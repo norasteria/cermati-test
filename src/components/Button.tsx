@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import color from "../global/color.json";
 
 interface ButtonProps {
-  readonly styleType: "orange" | "blue" | "outline-hover-white";
+  readonly styleType?: "orange" | "blue" | "outline-hover-white";
 }
 
 const buttonProps = {
@@ -26,7 +26,7 @@ const buttonProps = {
 };
 
 export default styled.button<ButtonProps>`
-  ${(props) => buttonProps[props.styleType]}
+  ${(props) => props.styleType && buttonProps[props.styleType]}
   border: unset;
   border-radius: 2px;
   padding: 5px 10px;
