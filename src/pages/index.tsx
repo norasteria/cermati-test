@@ -1,8 +1,15 @@
-import React from "react"
-import { PageProps } from "gatsby"
+import React from "react";
+import { PageProps } from "gatsby";
+
+import Button from "../components/Button";
 
 const IndexPage: React.FC<PageProps> = () => {
-    return <div>HELLO</div>
-}
+    return (
+        <div>
+            Hello World!
+            <Button styleType="orange">Trial</Button>
+        </div>
+    );
+};
 
-export default IndexPage
+export default IndexPage;
