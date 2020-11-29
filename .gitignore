@@ -1,2 +1,5 @@
 node_modules
+
+#Gatsby build files
 .cache
+public
