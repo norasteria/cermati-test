@@ -31,7 +31,7 @@ const Card: React.FC<CardProps> = (props) => (
       <b style={{ fontSize: 18 }}>{props.title}</b>
       <FontAwesomeIcon icon={props.icon} size="2x" color={color.DarkGray} />
     </TitleWrapper>
-    <div>{props.desc}</div>
+    <div style={{ fontSize: 15 }}>{props.desc}</div>
   </CardWrapper>
 );
 

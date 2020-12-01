@@ -23,7 +23,7 @@ const ConsentCookieContainer = styled.div<ConsentCookieContainerProps>`
   width: calc(100vw - 20px);
   z-index: 10;
   padding: 10px;
-  font-size: 14px;
+  font-size: 13px;
 
   ${(props) =>
     props.visible
