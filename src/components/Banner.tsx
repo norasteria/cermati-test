@@ -11,6 +11,10 @@ const BannerWrapper = styled.div`
   .banner {
     height: 65vh;
   }
+
+  .logo {
+    margin: 25px;
+  }
 `;
 
 const Mask = styled.div`
@@ -23,13 +27,16 @@ const Mask = styled.div`
 `;
 
 const BannerContentWrapper = styled.div`
-  align-items: center;
-  justify-content: center;
-  color: ${color.White};
   position: absolute;
   top: 0;
   height: 100%;
   width: 100%;
+`;
+
+const BannerTitle = styled.div`
+  align-items: center;
+  justify-content: center;
+  color: ${color.White};
   display: flex;
 
   p {
@@ -45,11 +52,18 @@ const BannerContentWrapper = styled.div`
 
 const Banner: React.FC = ({ children }) => {
   const bannerImage = useStaticQuery(graphql`
-    query BannerImage {
-      image: file(relativePath: { eq: "banner.jpg" }) {
+    query Images {
+      banner: file(relativePath: { eq: "banner.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      logo: file(relativePath: { eq: "logo.png" }) {
+        childImageSharp {
+          fixed(width: 60) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -58,10 +72,16 @@ const Banner: React.FC = ({ children }) => {
 
   return (
     <BannerWrapper>
-      <Img className="banner" fluid={bannerImage.image.childImageSharp.fluid} />
+      <Img
+        className="banner"
+        fluid={bannerImage.banner.childImageSharp.fluid}
+      />
       <Mask />
       <BannerContentWrapper>
-        <div>{children}</div>
+        <Img className="logo" fixed={bannerImage.logo.childImageSharp.fixed} />
+        <BannerTitle>
+          <div>{children}</div>
+        </BannerTitle>
       </BannerContentWrapper>
     </BannerWrapper>
   );
