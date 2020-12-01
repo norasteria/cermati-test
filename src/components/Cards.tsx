@@ -15,8 +15,6 @@ const CardWrapper = styled.div`
   border: 1px solid ${color.DarkGray};
   padding: 15px;
   margin-bottom: 30px;
-  -webkit-column-break-inside: avoid;
-  break-inside: avoid;
   min-height: 150px;
 `;
 
@@ -40,8 +38,17 @@ const Card: React.FC<CardProps> = (props) => (
 export default Card;
 
 export const CardGroupWrapper = styled.div`
-  column-count: 3;
-  column-gap: 30px;
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
   padding-left: 10px;
   padding-right: 10px;
+
+  @media (min-width: 480px){
+    grid-template-columns: 1fr 1fr;
+  } 
+  
+  @media (min-width: 960px){
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `;
