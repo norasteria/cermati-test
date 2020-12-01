@@ -19,8 +19,9 @@ const buttonProps = {
     border: 2px solid ${color.White};
     color: ${color.White};
     background: transparent;
-    ::hover {
-      background: ${color.White};
+    transition: background .5s;    
+    :hover {
+      background: ${color.White}FF;
       color: ${color.DarkBlue};
     }
   `,
@@ -28,7 +29,7 @@ const buttonProps = {
 
 export default styled.button<ButtonProps>`
   border: unset;
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 10px 15px;
   cursor: pointer;
 
