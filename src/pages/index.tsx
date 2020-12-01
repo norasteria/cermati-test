@@ -97,16 +97,20 @@ const IndexPage: React.FC<PageProps> = () => {
   const [newsModal, setNewsModal] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      setNewsModal(true);
-    }, 1000);
+    window.addEventListener("scroll", onScrollHandler)
 
-    () => {
-      clearTimeout(setTimeout(() => {
-        setNewsModal(true);
-      }, 1000))
+    return () => {
+      window.removeEventListener("scroll", onScrollHandler)
     }
   }, []);
+
+
+  const onScrollHandler = () => {
+    const maxScroll = document.body.offsetHeight - window.innerHeight
+    const position = Math.floor(window.pageYOffset)
+
+    if (maxScroll / 3 > position) setNewsModal(true)
+  }
 
   const onCookieOk = () => {
     setCookieModalShow(false);
