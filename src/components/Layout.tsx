@@ -8,6 +8,16 @@ const Content = styled.div`
   background: ${color.SmokeGrey};
 `
 
+const Footer = styled.footer`
+  background: ${color.BlackRussian};
+  width: 100%;
+  color: ${color.White};
+  font-size:14px;
+  text-align: center;
+  height: 60px;
+  padding-top: 50px;
+`
+
 const Layout: React.FC = ({ children }) => {
   return (
     <>
@@ -15,6 +25,9 @@ const Layout: React.FC = ({ children }) => {
       <Content>
         {children}
       </Content>
+      <Footer>
+        &#169;{new Date().getFullYear()} Nora Asteria. All rights reserved.
+      </Footer>
     </>
   );
 };
