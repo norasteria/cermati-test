@@ -44,7 +44,7 @@ const BannerContentWrapper = styled.div`
 `;
 
 const Banner: React.FC = ({ children }) => {
-    const bannerImage = useStaticQuery(graphql`
+  const bannerImage = useStaticQuery(graphql`
     query BannerImage {
       image: file(relativePath: { eq: "banner.jpg" }) {
         childImageSharp {
@@ -56,13 +56,15 @@ const Banner: React.FC = ({ children }) => {
     }
   `);
 
-    return (
-        <BannerWrapper>
-            <Img className="banner" fluid={bannerImage.image.childImageSharp.fluid} />
-            <Mask />
-            <BannerContentWrapper><div>{children}</div></BannerContentWrapper>
-        </BannerWrapper>
-    );
+  return (
+    <BannerWrapper>
+      <Img className="banner" fluid={bannerImage.image.childImageSharp.fluid} />
+      <Mask />
+      <BannerContentWrapper>
+        <div>{children}</div>
+      </BannerContentWrapper>
+    </BannerWrapper>
+  );
 };
 
 export default Banner;
