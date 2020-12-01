@@ -16,6 +16,7 @@ const buttonProps = {
     color: ${color.White};
   `,
   "outline-hover-white": css`
+    border: 2px solid ${color.White};
     color: ${color.White};
     background: transparent;
     ::hover {
@@ -26,13 +27,14 @@ const buttonProps = {
 };
 
 export default styled.button<ButtonProps>`
-  ${(props) => props.styleType && buttonProps[props.styleType]}
   border: unset;
   border-radius: 2px;
-  padding: 5px 10px;
+  padding: 10px 15px;
   cursor: pointer;
 
   :focus {
     outline: unset;
   }
+
+  ${(props) => props.styleType && buttonProps[props.styleType]}
 `;
