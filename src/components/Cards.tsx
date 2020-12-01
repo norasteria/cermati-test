@@ -13,8 +13,11 @@ type CardProps = {
 
 const CardWrapper = styled.div`
   border: 1px solid ${color.DarkGray};
-  padding: 10px;
+  padding: 15px;
   margin-bottom: 30px;
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+  min-height: 150px;
 `;
 
 const TitleWrapper = styled.div`
