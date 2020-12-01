@@ -1,10 +1,9 @@
 import React from "react";
-import { PageProps } from "gatsby";
 import { Helmet } from "react-helmet";
 
 import useMetadata from "../hooks/useMetadata";
 
-const HeadHTML: React.FC<PageProps> = () => {
+const HeadHTML: React.FC<{}> = () => {
   const { title, iconLink } = useMetadata();
 
   return (
