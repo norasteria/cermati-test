@@ -38,17 +38,17 @@ const Card: React.FC<CardProps> = (props) => (
 export default Card;
 
 export const CardGroupWrapper = styled.div`
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr;
   grid-gap: 30px;
   padding-left: 10px;
   padding-right: 10px;
 
-  @media (min-width: 480px){
+  @media (min-width: 480px) {
     grid-template-columns: 1fr 1fr;
-  } 
-  
-  @media (min-width: 960px){
+  }
+
+  @media (min-width: 960px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
 `;

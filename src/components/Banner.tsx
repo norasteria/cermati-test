@@ -13,7 +13,7 @@ const BannerWrapper = styled.div`
   }
 
   .logo {
-    margin: 25px;
+    margin: 60px 30px;
   }
 `;
 
