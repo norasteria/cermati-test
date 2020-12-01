@@ -21,7 +21,7 @@ const buttonProps = {
     background: transparent;
     transition: background .5s;    
     :hover {
-      background: ${color.White}FF;
+      background: ${color.White};
       color: ${color.DarkBlue};
     }
   `,
