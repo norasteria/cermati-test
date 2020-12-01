@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-import useMetadata from "../hooks/useMetadata";
+import useMetadata from "../utils/useMetadata";
 
 const HeadHTML: React.FC<{}> = () => {
   const { title, iconLink } = useMetadata();
