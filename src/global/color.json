@@ -5,5 +5,7 @@
   "DarkOrange": "#cc6600",
   "SmokeGrey": "#e5e5e5",
   "White": "#ffffff",
-  "Black": "#000000"
+  "Black": "#000000",
+  "BlackRussian": "#000020",
+  "DarkGray": "#aeaeae"
 }
