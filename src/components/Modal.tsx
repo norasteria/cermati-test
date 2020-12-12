@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled, { css } from "styled-components";
 import moment from "moment"
 
@@ -111,6 +111,14 @@ const CloseButton = styled.div`
 `
 
 export const ModalNewsletterSubs: React.FC<ModalNewsletterProps> = (props) => {
+  const [onBrowser, setBrowser] = useState(false)
+
+  useEffect(() => {
+    setBrowser(typeof window !== "undefined")
+  }, [])
+
+  if (!onBrowser) return null
+
   const { closeNewsTime } = localStorage
   const diffCloseTime = moment().diff(closeNewsTime, "minute")
 
